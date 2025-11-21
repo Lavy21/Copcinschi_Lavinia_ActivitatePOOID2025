@@ -194,6 +194,53 @@ public:
 		}
 		cout << "am apelat destructorul" << endl;
 	}
+
+	Magazin(const Magazin& obj) :CUI(obj.CUI) {
+		this->denumireMagazin = obj.denumireMagazin;
+		this->nrAngajati = obj.nrAngajati;
+		this->suprafataMagazinMP = obj.suprafataMagazinMP;
+		this->esteNonStop = obj.esteNonStop;
+
+		this->numeProprietar = new char[strlen(obj.numeProprietar) + 1];
+		strcpy(this->numeProprietar, obj.numeProprietar);
+
+		this->nrProduse = obj.nrProduse;
+
+		this->preturiProduse = new float[this->nrProduse];
+		this->denumiriProduse = new string[this->nrProduse];
+		for (int i = 0; i < nrProduse; i++) {
+			this->preturiProduse[i] = obj.preturiProduse[i];
+			this->denumiriProduse[i] = obj.denumiriProduse[i];
+		}
+	}
+	Magazin& operator=(const Magazin& obj) {
+		if (this->numeProprietar != NULL) {
+			delete[] this->numeProprietar;
+		}
+		if (this->denumiriProduse != NULL) {
+			delete[] this->denumiriProduse;
+		}
+		if (preturiProduse != NULL) {
+			delete[] this->preturiProduse;
+		}
+		this->denumireMagazin = obj.denumireMagazin;
+		this->nrAngajati = obj.nrAngajati;
+		this->suprafataMagazinMP = obj.suprafataMagazinMP;
+		this->esteNonStop = obj.esteNonStop;
+
+		this->numeProprietar = new char[strlen(obj.numeProprietar) + 1];
+		strcpy(this->numeProprietar, obj.numeProprietar);
+		this->nrProduse = obj.nrProduse;
+
+		this->preturiProduse = new float[this->nrProduse];
+		this->denumiriProduse = new string[this->nrProduse];
+		for (int i = 0; i < nrProduse; i++) {
+			this->preturiProduse[i] = obj.preturiProduse[i];
+			this->denumiriProduse[i] = obj.denumiriProduse[i];
+		}
+		return *this;
+	}
+
 };
 
 int Magazin::clasaCaenPrincipala = 15;
@@ -302,5 +349,33 @@ void main() {
 			cout << endl;
 		}
 
+		cout << "Constructor copiere:" << endl;
+		Magazin m8(m1);
+		cout << "Magazin 1:" << endl;
+		cout << m1.getDenumireMagazin() << endl;
+		cout << m1.getNrAngajati() << endl;
+		cout << m1.getSuprafataMagazinMP() << endl;
+		cout << m1.getEsteNonStop() << endl;
+		cout << m1.getCUI() << endl;
+		cout << m1.getNumeProprietar() << endl;
+		cout << m1.getNrProduse() << endl;
+		for (int i = 0; i < m1.getNrProduse(); i++) {
+			cout << m1.getPreturiProduse()[i] << ";" << m1.getDenumiriProduse()[i] << endl;
+		}
+		cout << endl;
+
+		cout << "Magazin nou 8:" << endl;
+		cout << m8.getDenumireMagazin() << endl;
+		cout << m8.getNrAngajati() << endl;
+		cout << m8.getSuprafataMagazinMP() << endl;
+		cout << m8.getEsteNonStop() << endl;
+		cout << m8.getCUI() << endl;
+		cout << m8.getNumeProprietar() << endl;
+		cout << m8.getNrProduse() << endl;
+		for (int i = 0; i < m8.getNrProduse(); i++)
+		{
+			cout << m8.getPreturiProduse()[i] << " ; " << m8.getDenumiriProduse()[i] << endl;
+		}
+		cout << endl;
 }
 
