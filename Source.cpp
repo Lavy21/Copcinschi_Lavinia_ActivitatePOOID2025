@@ -377,5 +377,37 @@ void main() {
 			cout << m8.getPreturiProduse()[i] << " ; " << m8.getDenumiriProduse()[i] << endl;
 		}
 		cout << endl;
+
+		cout << "Operator =:" << endl;
+		cout << "Magazin 4 inainte de a fi modificat:" << endl;
+		cout << m4.getDenumireMagazin() << endl;
+		cout << m4.getNrAngajati() << endl;
+		cout << m4.getSuprafataMagazinMP() << endl;
+		cout << m4.getEsteNonStop() << endl;
+		cout << m4.getCUI() << endl;
+		cout << m4.getNumeProprietar() << endl;
+		cout << m4.getNrProduse() << endl;
+		for (int i = 0; i < m4.getNrProduse(); i++)
+		{
+			cout << m4.getPreturiProduse()[i] << " ; " << m4.getDenumiriProduse()[i] << endl;
+		}
+		cout << endl << endl;
+
+		m4 = m1;
+
+		cout << "Magazin 4 dupa ce a fost modificat:" << endl;
+		cout << m4.getDenumireMagazin() << endl;
+		cout << m4.getNrAngajati() << endl;
+		cout << m4.getSuprafataMagazinMP() << endl;
+		cout << m4.getEsteNonStop() << endl;
+		cout << m4.getCUI() << endl;
+		cout << m4.getNumeProprietar() << endl;
+		cout << m4.getNrProduse() << endl;
+		for (int i = 0; i < m4.getNrProduse(); i++)
+		{
+			cout << m4.getPreturiProduse()[i] << " ; " << m4.getDenumiriProduse()[i] << endl;
+		}
+		cout << endl << endl;
+
 }
 
