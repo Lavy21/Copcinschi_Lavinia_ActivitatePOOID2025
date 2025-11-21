@@ -269,7 +269,12 @@ public:
 			suma = suma + this->preturiProduse[i];
 		}
 		return suma;
+	}
 
+	float pretMediu() {
+		float medie;
+		medie = this->sumaPreturi() / this->nrProduse;
+		return medie;
 	}
 };
 
@@ -439,5 +444,19 @@ void main() {
 		}
 		cout << endl << endl;
 
+
+		cout << m1.getNrProduse() << endl;
+		cout << "Produse:" << endl;
+		for (int i = 0; i < m1.getNrProduse(); i++)
+		{
+			cout << "Pret:" << m1.getPreturiProduse()[i] << " ; " << "Denumire:" << m1.getDenumiriProduse()[i] << endl;
+		}
+		cout << endl;
+
+		cout << "Pretul minim din magazinul m1 este:" << m1.pretMinim() << endl;
+		cout << "Pretul maxim din magazinul m1 este:" << m1.pretMaxim() << endl;
+		cout << "Suma preturi din magazinul m1 sunt:" << m1.sumaPreturi() << endl;
+		cout << "Pretul mediu din magazinul m1 este:" << m1.pretMediu() << endl;
+		cout << endl << endl;
 }
 
