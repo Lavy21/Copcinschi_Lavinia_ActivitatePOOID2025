@@ -153,7 +153,7 @@ void main() {
 
 	float preturi[] = { 10.2,52.8,74.1,5.4 };
 	string denumiri[] = { "peste","lamai","carne","chifle" };
-	Magazin m1("Lidl", 80, 523.3, 0, 123, "Alexandra", 5, preturi, denumiri);
+	Magazin m1("Lidl", 80, 523.3, 0, 123, "Alexandra", 4, preturi, denumiri);
 	cout << m1.getDenumireMagazin() << endl;
 	cout << m1.getNrAngajati() << endl;
 	cout << m1.getSuprafataMagazinMP() << endl;
@@ -169,7 +169,7 @@ void main() {
 
 	float preturi1[] = { 15.4,52.7,14.5,4.1 };
 	string denumiri1[] = { "cafea","ceai","suc","apa" };
-	Magazin m2("Kaufland", 100, 1028.6, 1, 465, "Costel", 14, preturi1, denumiri1);
+	Magazin m2("Kaufland", 100, 1028.6, 1, 465, "Costel", 4, preturi1, denumiri1);
 	cout << m2.getDenumireMagazin() << endl;
 	cout << m2.getNrAngajati() << endl;
 	cout << m2.getSuprafataMagazinMP() << endl;
