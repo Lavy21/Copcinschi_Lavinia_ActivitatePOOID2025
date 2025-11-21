@@ -182,7 +182,18 @@ public:
 			}
 		}
 	}
-
+	~Magazin() {
+		if (this-> preturiProduse != NULL) {
+			delete[] this->preturiProduse;
+		}
+		if (this->denumiriProduse != NULL) {
+			delete[] this->denumiriProduse;
+		}
+		if (this->numeProprietar != NULL) {
+			delete[] this->numeProprietar;
+		}
+		cout << "am apelat destructorul" << endl;
+	}
 };
 
 int Magazin::clasaCaenPrincipala = 15;
