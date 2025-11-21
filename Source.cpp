@@ -276,6 +276,29 @@ public:
 		medie = this->sumaPreturi() / this->nrProduse;
 		return medie;
 	}
+
+	void adaugaProdusNou(float pretProdusNou, string denumireProdusNou)
+	{
+		Magazin copie(*this); 
+		if (this->preturiProduse != NULL)
+		{
+			delete[] this->preturiProduse;
+		}
+		if (this->denumiriProduse != NULL)
+		{
+			delete[] this->denumiriProduse;
+		}
+		this->nrProduse++;
+		this->preturiProduse = new float[this->nrProduse];
+		this->denumiriProduse = new string[this->nrProduse];
+		for (int i = 0; i < copie.nrProduse; i++)
+		{
+			this->preturiProduse[i] = copie.preturiProduse[i];
+			this->denumiriProduse[i] = copie.denumiriProduse[i];
+		}
+		this->preturiProduse[this->nrProduse - 1] = pretProdusNou;
+		this->denumiriProduse[this->nrProduse - 1] = denumireProdusNou;
+	}
 };
 
 int Magazin::clasaCaenPrincipala = 15;
@@ -457,6 +480,38 @@ void main() {
 		cout << "Pretul maxim din magazinul m1 este:" << m1.pretMaxim() << endl;
 		cout << "Suma preturi din magazinul m1 sunt:" << m1.sumaPreturi() << endl;
 		cout << "Pretul mediu din magazinul m1 este:" << m1.pretMediu() << endl;
+		cout << endl << endl;
+
+		cout << "Obiectul m1 inainte de apelarea metodei adauga:" << endl;
+		cout << m1.getDenumireMagazin() << endl;
+		cout << m1.getNrAngajati() << endl;
+		cout << m1.getSuprafataMagazinMP() << endl;
+		cout << m1.getEsteNonStop() << endl;
+		cout << m1.getCUI() << endl;
+		cout << m1.getNumeProprietar() << endl;
+		cout << m1.getNrProduse() << endl;
+		cout << "Produse:" << endl;
+		for (int i = 0; i < m1.getNrProduse(); i++)
+		{
+			cout << "Pret:" << m1.getPreturiProduse()[i] << " ; " << "Denumire:" << m1.getDenumiriProduse()[i] << endl;
+		}
+		cout << endl;
+
+		m1.adaugaProdusNou(12.3, "Orez");
+
+		cout << "Obiectul m1 dupa apelarea metodei adauga:" << endl;
+		cout << m1.getDenumireMagazin() << endl;
+		cout << m1.getNrAngajati() << endl;
+		cout << m1.getSuprafataMagazinMP() << endl;
+		cout << m1.getEsteNonStop() << endl;
+		cout << m1.getCUI() << endl;
+		cout << m1.getNumeProprietar() << endl;
+		cout << m1.getNrProduse() << endl;
+		cout << "Produse:" << endl;
+		for (int i = 0; i < m1.getNrProduse(); i++)
+		{
+			cout << "Pret:" << m1.getPreturiProduse()[i] << " ; " << "Denumire:" << m1.getDenumiriProduse()[i] << endl;
+		}
 		cout << endl << endl;
 }
 
