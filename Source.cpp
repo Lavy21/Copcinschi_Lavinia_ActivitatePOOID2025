@@ -241,6 +241,36 @@ public:
 		return *this;
 	}
 
+	float pretMinim() {
+		float pretMinim;
+		pretMinim = this->preturiProduse[0];
+		for (int i = 1; i < this->nrProduse; i++) {
+			if (this->preturiProduse[i] < pretMinim) {
+				pretMinim = this->preturiProduse[i];
+			}
+		}
+		return pretMinim;
+	}
+
+	float pretMaxim() {
+		float pretMaxim;
+		pretMaxim = this->preturiProduse[0];
+		for (int i = 1; i < this->nrProduse; i++) {
+			if (this->preturiProduse[i] > pretMaxim) {
+				pretMaxim = this->preturiProduse[i];
+			}
+		}
+		return pretMaxim;
+	}
+
+	float sumaPreturi() {
+		float suma=0;
+		for (int i = 0; i < this->nrProduse; i++) {
+			suma = suma + this->preturiProduse[i];
+		}
+		return suma;
+
+	}
 };
 
 int Magazin::clasaCaenPrincipala = 15;
