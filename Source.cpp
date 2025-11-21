@@ -144,6 +144,44 @@ public:
 	void setEsteNonStop(bool esteNouNonStop) {
 		this->esteNonStop = esteNouNonStop;
 	}
+	void setNumeProprietar(const char* numeNouProprietar) {
+		if (this->numeProprietar != NULL) {
+			delete[] this->numeProprietar;
+			this->numeProprietar = new char[strlen(numeNouProprietar) + 1];
+			strcpy(this->numeProprietar, numeNouProprietar);
+		}
+		else {
+			this->numeProprietar = new char[strlen(numeNouProprietar) + 1];
+			strcpy(this->numeProprietar, numeNouProprietar);
+		}
+	}
+	void setProduse(int nrNouProduse, float* preturiNoiProsuse, string* denumiriNoiProduse) {
+		if ((this->preturiProduse != NULL) && (this->denumiriProduse != NULL)) {
+			delete[] this->preturiProduse;
+			delete[] this->denumiriProduse;
+
+			this->nrProduse = nrNouProduse;
+
+			this->preturiProduse = new float[this->nrProduse];
+			this->denumiriProduse = new string[this->nrProduse];
+
+			for (int i = 0; i < this->nrProduse; i++) {
+				this->preturiProduse[i] = preturiNoiProsuse[i];
+				this->denumiriProduse[i] = denumiriNoiProduse[i];
+			}
+		}
+		else {
+			this->nrProduse = nrNouProduse;
+
+			this->preturiProduse = new float[this->nrProduse];
+			this->denumiriProduse = new string[this->nrProduse];
+
+			for (int i = 0; i < this->nrProduse; i++) {
+				this->preturiProduse[i] = preturiNoiProsuse[i];
+				this->denumiriProduse[i] = denumiriNoiProduse[i];
+			}
+		}
+	}
 
 };
 
