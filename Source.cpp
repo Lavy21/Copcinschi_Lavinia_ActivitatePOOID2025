@@ -377,6 +377,74 @@ public:
 			}
 		}
 	}
+
+	bool operator<=(const Magazin& obj)
+	{
+		if (this->suprafataMagazinMP <= obj.suprafataMagazinMP)
+		{
+			return true; 
+		}
+		else
+		{
+			return false; 
+		}
+	}
+
+	friend ostream& operator<<(ostream& o, const Magazin& obj)
+	{
+		o << "Denumire magazin:" << obj.denumireMagazin << endl;
+		o << "Este non-stop? (1-da 0-nu):" << obj.esteNonStop << endl;
+		o << "Nr angajati:" << obj.nrAngajati << endl;
+		o << "Suprafata:" << obj.suprafataMagazinMP << endl;
+		o << "Nume proprietar:" << obj.numeProprietar << endl;
+		o << "Nr produse:" << obj.nrProduse << endl;
+		cout << "Produse:" << endl;
+		for (int i = 0; i < obj.nrProduse; i++)
+		{
+			o << obj.preturiProduse[i] << " ; " << obj.denumiriProduse[i] << endl;
+		}
+		o << obj.CUI << endl << endl;
+
+		return o;
+	}
+
+	friend istream& operator >>(istream& i, Magazin& obj)
+	{
+		delete[] obj.numeProprietar;
+		delete[] obj.preturiProduse;
+		delete[] obj.denumiriProduse;
+
+		cout << "Introduceti denumirea magazinului:";
+		i >> obj.denumireMagazin;
+		cout << "Introduceti 1 daca magazinul este non-stop sau 0 daca magazinul nu este non-stop:";
+		i >> obj.esteNonStop;
+		cout << "Introduceti nr de angajati:";
+		i >> obj.nrAngajati;
+		cout << "Introduceti suprafata:";
+		i >> obj.suprafataMagazinMP;
+
+		cout << "Introduceti numele proprietarului:";
+		char aux[100];
+		i >> aux;
+		obj.numeProprietar = new char[strlen(aux) + 1];
+		strcpy(obj.numeProprietar, aux);
+
+		cout << "Introduceti nr de produse:";
+		i >> obj.nrProduse;
+
+		obj.preturiProduse = new float[obj.nrProduse];
+		obj.denumiriProduse = new string[obj.nrProduse];
+		cout << "Introduceti preturile si denumirile produselor:";
+		for (int j = 0; j < obj.nrProduse; j++)
+		{
+			cout << "Pret:";
+			i >> obj.preturiProduse[j];
+			cout << "Denumire:";
+			i >> obj.denumiriProduse[j];
+		}
+		return i;
+	}
+
 	};
 
 int Magazin::clasaCaenPrincipala = 15;
@@ -440,18 +508,33 @@ void main() {
 		cout << endl;
 	}
 
-		Magazin m5("Cora");
-		cout << m5.getDenumireMagazin() << endl;
-		cout << m5.getNrAngajati() << endl;
-		cout << m5.getSuprafataMagazinMP() << endl;
-		cout << m5.getEsteNonStop() << endl;
-		cout << m5.getCUI() << endl;
-		cout << m5.getNumeProprietar() << endl;
-		cout << m5.getNrProduse() << endl;
-		for (int i = 0; i < m5.getNrProduse(); i++) {
-			cout << m5.getPreturiProduse()[i] << ";" << m5.getDenumiriProduse()[i] << endl;
-			cout << endl;
-		}
+	Magazin m5("Cora");
+	cout << m5.getDenumireMagazin() << endl;
+	cout << m5.getNrAngajati() << endl;
+	cout << m5.getSuprafataMagazinMP() << endl;
+	cout << m5.getEsteNonStop() << endl;
+	cout << m5.getCUI() << endl;
+	cout << m5.getNumeProprietar() << endl;
+	cout << m5.getNrProduse() << endl;
+	for (int i = 0; i < m5.getNrProduse(); i++) {
+		cout << m5.getPreturiProduse()[i] << ";" << m5.getDenumiriProduse()[i] << endl;
+		cout << endl;
+	}
+
+	Magazin m6("Padndora", 45, 78.5);
+	cout << m6.getDenumireMagazin() << endl;
+	cout << m6.getNrAngajati() << endl;
+	cout << m6.getSuprafataMagazinMP() << endl;
+	cout << m6.getEsteNonStop() << endl;
+	cout << m6.getCUI() << endl;
+	cout << m6.getNumeProprietar() << endl;
+	cout << m6.getNrProduse() << endl;
+	cout << "Produse:" << endl;
+	for (int i = 0; i < m6.getNrProduse(); i++)
+	{
+		cout << "Pret:" << m6.getPreturiProduse()[i] << " ; " << "Denumire:" << m6.getDenumiriProduse()[i] << endl;
+	}
+	cout << endl << endl;
 
 		cout << "Setteri pentru Magazin3" << endl;
 		cout << "Magazin 3 inainte de setteri" << endl;
@@ -666,5 +749,27 @@ void main() {
 		}
 		cout << endl << endl;
 
+		cout << "Suprafata m1:" << m1.getSuprafataMagazinMP() << endl;
+		cout << "Suprafata m2:" << m2.getSuprafataMagazinMP() << endl;
+		cout << "Suprafata magazinului 1 este <= suprafata magazinului 2? (1 - DA ; 0 - NU):" << (m1 <= m2) << endl;
+
+		if (m1 <= m2)
+		{
+			cout << "Suprafata magazinului 1 este <= suprafata magazinului 2";
+		}
+		else
+		{
+			cout << "Suprafata magazinului 1 este >= suprafata magazinului 2";
+		}
+
+		cout << endl << endl << "OPERATORUL<<" << endl << endl;
+		cout << m1 << endl;
+		cout << m2 << endl;
+		cout << m3 << endl;
+
+
+		cout << endl << endl << "OPERATORUL>>" << endl << endl;
+		cin >> m1;
+		cout << endl << endl << m1 << endl << endl;
 }
 
