@@ -277,6 +277,18 @@ public:
 		return medie;
 	}
 
+	void aplicareDiscount(float reducere, int pozitieProdusRedus)
+	{
+		if (pozitieProdusRedus >= 0 && pozitieProdusRedus < this->nrProduse)
+		{
+			this->preturiProduse[pozitieProdusRedus] = this->preturiProduse[pozitieProdusRedus] - this->preturiProduse[pozitieProdusRedus] * reducere;
+		}
+		else
+		{
+			cout << "Pozitie din vector inexistenta";
+		}
+	}
+
 	void adaugaProdusNou(float pretProdusNou, string denumireProdusNou)
 	{
 		Magazin copie(*this); 
@@ -299,7 +311,73 @@ public:
 		this->preturiProduse[this->nrProduse - 1] = pretProdusNou;
 		this->denumiriProduse[this->nrProduse - 1] = denumireProdusNou;
 	}
-};
+
+	void eliminaProdusPozitie(int pozitieDorita)
+	{
+		Magazin copie(*this);
+		if (this->preturiProduse != NULL){
+			delete[] this->preturiProduse;
+		}
+		if (this->denumiriProduse != NULL){
+			delete[] this->denumiriProduse;
+		}
+		this->nrProduse=this->nrProduse-1;
+
+		this->preturiProduse = new float[this->nrProduse];
+		this->denumiriProduse = new string[this->nrProduse];
+
+		for (int i = 0; i < pozitieDorita; i++)
+		{
+			this->preturiProduse[i] = copie.preturiProduse[i];
+			this->denumiriProduse[i] = copie.denumiriProduse[i];
+		}
+
+		for (int i = pozitieDorita + 1; i < copie.nrProduse; i++)
+		{
+			this->preturiProduse[i - 1] = copie.preturiProduse[i];
+			this->denumiriProduse[i - 1] = copie.denumiriProduse[i];
+		}
+	}
+
+	void eliminaProdusValore(float pretCautat)
+	{
+		Magazin copie(*this);
+
+		if (this->preturiProduse != NULL)
+		{
+			delete[] this->preturiProduse;
+		}
+		if (this->denumiriProduse != NULL)
+		{
+			delete[] this->denumiriProduse;
+		}
+
+		int nr = 0;
+		for (int i = 0; i < copie.nrProduse; i++)
+		{
+			if (copie.preturiProduse[i] == pretCautat)
+			{
+				nr++; 
+			}
+		}
+
+		this->nrProduse = this->nrProduse - nr;
+
+		this->preturiProduse = new float[this->nrProduse];
+		this->denumiriProduse = new string[this->nrProduse];
+
+		int poz = 0;
+		for (int i = 0; i < copie.nrProduse; i++)
+		{
+			if (copie.preturiProduse[i] != pretCautat)
+			{
+				this->preturiProduse[poz] = copie.preturiProduse[i];
+				this->denumiriProduse[poz] = copie.denumiriProduse[i];
+				poz++;
+			}
+		}
+	}
+	};
 
 int Magazin::clasaCaenPrincipala = 15;
 
@@ -497,6 +575,15 @@ void main() {
 		}
 		cout << endl;
 
+		m1.aplicareDiscount(0.2, 20);
+		cout << m1.getNrProduse() << endl;
+		cout << "Produse:" << endl;
+		for (int i = 0; i < m1.getNrProduse(); i++)
+		{
+			cout << "Pret:" << m1.getPreturiProduse()[i] << " ; " << "Denumire:" << m1.getDenumiriProduse()[i] << endl;
+		}
+		cout << endl << endl;
+
 		m1.adaugaProdusNou(12.3, "Orez");
 
 		cout << "Obiectul m1 dupa apelarea metodei adauga:" << endl;
@@ -513,5 +600,71 @@ void main() {
 			cout << "Pret:" << m1.getPreturiProduse()[i] << " ; " << "Denumire:" << m1.getDenumiriProduse()[i] << endl;
 		}
 		cout << endl << endl;
+
+
+		cout << "Obiectul m1 inainte de apelarea metodei elimina dupa pozitie:" << endl;
+		cout << m1.getDenumireMagazin() << endl;
+		cout << m1.getNrAngajati() << endl;
+		cout << m1.getSuprafataMagazinMP() << endl;
+		cout << m1.getEsteNonStop() << endl;
+		cout << m1.getCUI() << endl;
+		cout << m1.getNumeProprietar() << endl;
+		cout << m1.getNrProduse() << endl;
+		cout << "Produse:" << endl;
+		for (int i = 0; i < m1.getNrProduse(); i++)
+		{
+			cout << "Pret:" << m1.getPreturiProduse()[i] << " ; " << "Denumire:" << m1.getDenumiriProduse()[i] << endl;
+		}
+		cout << endl << endl;
+
+		m1.eliminaProdusPozitie(2);
+
+		cout << "Obiectul m1 dupa apelarea metodei elimina dupa pozitie:" << endl;
+		cout << m1.getDenumireMagazin() << endl;
+		cout << m1.getNrAngajati() << endl;
+		cout << m1.getSuprafataMagazinMP() << endl;
+		cout << m1.getEsteNonStop() << endl;
+		cout << m1.getCUI() << endl;
+		cout << m1.getNumeProprietar() << endl;
+		cout << m1.getNrProduse() << endl;
+		cout << "Produse:" << endl;
+		for (int i = 0; i < m1.getNrProduse(); i++)
+		{
+			cout << "Pret:" << m1.getPreturiProduse()[i] << " ; " << "Denumire:" << m1.getDenumiriProduse()[i] << endl;
+		}
+		cout << endl << endl;
+
+		cout << "Obiectul m1 inainte de apelarea metodei elimina dupa valoare:" << endl;
+		cout << m1.getDenumireMagazin() << endl;
+		cout << m1.getNrAngajati() << endl;
+		cout << m1.getSuprafataMagazinMP() << endl;
+		cout << m1.getEsteNonStop() << endl;
+		cout << m1.getCUI() << endl;
+		cout << m1.getNumeProprietar() << endl;
+		cout << m1.getNrProduse() << endl;
+		cout << "Produse:" << endl;
+		for (int i = 0; i < m1.getNrProduse(); i++)
+		{
+			cout << "Pret:" << m1.getPreturiProduse()[i] << " ; " << "Denumire:" << m1.getDenumiriProduse()[i] << endl;
+		}
+		cout << endl << endl;
+
+		m1.eliminaProdusValore(10.2);
+
+		cout << "Obiectul m1 dupa apelarea metodei elimina dupa valoare:" << endl;
+		cout << m1.getDenumireMagazin() << endl;
+		cout << m1.getNrAngajati() << endl;
+		cout << m1.getSuprafataMagazinMP() << endl;
+		cout << m1.getEsteNonStop() << endl;
+		cout << m1.getCUI() << endl;
+		cout << m1.getNumeProprietar() << endl;
+		cout << m1.getNrProduse() << endl;
+		cout << "Produse:" << endl;
+		for (int i = 0; i < m1.getNrProduse(); i++)
+		{
+			cout << "Pret:" << m1.getPreturiProduse()[i] << " ; " << "Denumire:" << m1.getDenumiriProduse()[i] << endl;
+		}
+		cout << endl << endl;
+
 }
 
