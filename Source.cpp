@@ -445,6 +445,154 @@ public:
 		return i;
 	}
 
+	string operator[](int pozitieDorita)
+	{
+		if (pozitieDorita >= 0 && pozitieDorita < this->nrProduse)
+		{
+			return this->denumiriProduse[pozitieDorita];
+		}
+		else
+		{
+			return "Pozitie eronata";
+		}
+	}
+
+	int operator()(float prag)
+	{
+		int contor = 0;
+		for (int i = 0; i < this->nrProduse; i++)
+		{
+			if (this->preturiProduse[i] > prag)
+			{
+				contor++; 
+			}
+		}
+		return contor;
+	}
+
+	friend void operator!(Magazin& obj)
+	{
+		if (obj.esteNonStop == 1)
+		{
+			obj.esteNonStop = 0;
+		}
+		else
+		{
+			obj.esteNonStop = 1;
+		}
+	}
+
+	Magazin& operator+=(float pretProdusNou)
+	{
+		Magazin copie(*this); 
+
+		if (this->preturiProduse != NULL)
+		{
+			delete[] this->preturiProduse;
+		}
+		if (this->denumiriProduse != NULL)
+		{
+			delete[] this->denumiriProduse;
+		}
+
+		this->nrProduse++; 
+
+		this->preturiProduse = new float[this->nrProduse];
+		this->denumiriProduse = new string[this->nrProduse];
+
+		for (int i = 0; i < copie.nrProduse; i++)
+		{
+			this->preturiProduse[i] = copie.preturiProduse[i];
+			this->denumiriProduse[i] = copie.denumiriProduse[i];
+		}
+
+		this->preturiProduse[this->nrProduse - 1] = pretProdusNou;
+		this->denumiriProduse[this->nrProduse - 1] = "Necunoscuta";
+
+		return *this;
+	}
+
+	Magazin& operator-=(float pretCautat)
+	{
+		Magazin copie(*this);
+
+		if (this->preturiProduse != NULL)
+		{
+			delete[] this->preturiProduse;
+		}
+		if (this->denumiriProduse != NULL)
+		{
+			delete[] this->denumiriProduse;
+		}
+
+		int nr = 0;
+		for (int i = 0; i < copie.nrProduse; i++)
+		{
+			if (copie.preturiProduse[i] == pretCautat)
+			{
+				nr++;
+			}
+		}
+
+		this->nrProduse = this->nrProduse - nr;
+
+		this->preturiProduse = new float[this->nrProduse];
+		this->denumiriProduse = new string[this->nrProduse];
+
+		int poz = 0;
+		for (int i = 0; i < copie.nrProduse; i++)
+		{
+			if (copie.preturiProduse[i] != pretCautat)
+			{
+				this->preturiProduse[poz] = copie.preturiProduse[i];
+				this->denumiriProduse[poz] = copie.denumiriProduse[i];
+				poz++;
+			}
+		}
+
+		return *this;
+	}
+
+	Magazin& operator++()
+	{
+		this->nrAngajati++;
+		return *this;
+	}
+
+	Magazin operator++(int)
+	{
+		Magazin copie = *this;
+		this->nrAngajati++;
+		return copie;
+	}
+
+	operator float()
+	{
+		float TVA = 0.24;
+		float sumaTotalaTVA = 0;
+		for (int i = 0; i < this->nrProduse; i++)
+		{
+			sumaTotalaTVA = sumaTotalaTVA + TVA * this->preturiProduse[i];
+		}
+		return sumaTotalaTVA;
+	}
+
+	operator string()
+	{
+		float pretMax;
+		pretMax = this->preturiProduse[0];
+		int contor = 0;
+		for (int i = 1; i < this->nrProduse; i++)
+		{
+			if (this->preturiProduse[i] > pretMax)
+			{
+				pretMax = this->preturiProduse[i];
+				contor = i;
+			}
+		}
+		return this->denumiriProduse[contor];
+	}
+
 	};
 
 int Magazin::clasaCaenPrincipala = 15;
@@ -768,8 +916,60 @@ void main() {
 		cout << m3 << endl;
 
 
-		cout << endl << endl << "OPERATORUL>>" << endl << endl;
+		cout << endl << "OPERATORUL>>" << endl;
 		cin >> m1;
-		cout << endl << endl << m1 << endl << endl;
+		cout << endl << m1 << endl;
+
+
+		cout << endl << "OPERATORUL []" << endl;
+		cout << "Denumirea produsului cu indexul 2 din magazinul 2 este:" << m2[2] << endl;
+		cout << "Denumirea produsului cu indexul 2 din magazinul 2 este:" << m2[20] << endl;
+
+		cout << endl << "OPERATORUL ()" << endl;
+		cout << m3 << endl;
+		cout << "In magazinul 3 avem: " << m3(15) << "Produse cu pretul mai mare de 15 de lei" << endl;
+
+		cout << endl << endl << "OPERATORUL !" << endl << endl;
+		cout << "Obiectul m1 este non-stop? (1-DA/ 0-NU)" << m1.getEsteNonStop() << endl;
+		!m1;
+		cout << "Obiectul m1 este non-stop? (1-DA/ 0-NU)" << m1.getEsteNonStop() << endl;
+
+		cout << endl << endl << "OPERATORUL +=" << endl << endl;
+		cout << "M3 inainte de apelul operatorului +=:" << endl;
+		cout << m3 << endl << endl;
+		m3 += 23.7;
+		cout << "M3 dupa apelul operatorului +=:" << endl;
+		cout << m3 << endl << endl;
+
+		cout << endl << endl << "OPERATORUL -=" << endl << endl;
+		cout << "M3 inainte de apelul operatorului -=:" << endl;
+		cout << m3 << endl << endl;
+		m3 -= 123.5;
+		cout << "M3 dupa apelul operatorului -=:" << endl;
+		cout << m3 << endl << endl;
+
+		cout << endl << endl << "OPERATORUL ++ preincrementare" << endl << endl;
+		cout << "Nr anagjati m1:" << m1.getNrAngajati() << endl;
+		cout << "Nr anagjati m3:" << m3.getNrAngajati() << endl;
+		m1 = ++m3;
+		cout << "Nr anagjati m1:" << m1.getNrAngajati() << endl;
+		cout << "Nr anagjati m3:" << m3.getNrAngajati() << endl;
+
+		cout << endl << "OPERATORUL ++ postincrementare" << endl;
+		cout << "Nr anagjati m2:" << m2.getNrAngajati() << endl;
+		cout << "Nr anagjati m4:" << m4.getNrAngajati() << endl;
+		m2 = m4++;
+		cout << "Nr anagjati m2:" << m2.getNrAngajati() << endl;
+		cout << "Nr anagjati m4:" << m4.getNrAngajati() << endl;
+
+		cout << endl << "OPERATORUL DE CAST LA FLOAT" << endl;
+		cout << m1 << endl << endl;
+
+		cout << "Suma valorii TVA pentru produsele din magazinul 1 este:" << (float)m1 << endl;
+
+		cout << endl << "OPERATORUL DE CAST LA STRING" << endl;
+		cout << "Produsul cel mai scump din magazinul 1 este:" << (string)m1 << endl;
+
+
 }
 
