@@ -1040,12 +1040,10 @@ void main() {
 		{
 			cout << mall2.getVectorMagazine()[i] << endl << endl;
 		}
-
 		cout << "-SETTERI-" << endl;
 		mall1.setDenumireMall("AFI");
 		Magazin vectorMagazine2[] = { m1,m4,m5};
 		mall1.setMagazine(3, vectorMagazine2);
-
 		cout << mall1.getDenumireMall() << endl;
 		cout << mall1.getNrMagazine() << endl;
 		cout << "Magazinele din Mall sunt:" << endl;
@@ -1053,6 +1051,5 @@ void main() {
 		{
 			cout << mall1.getVectorMagazine()[i] << endl << endl;
 		}
-
 }
 
