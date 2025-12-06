@@ -597,6 +597,57 @@ public:
 
 int Magazin::clasaCaenPrincipala = 15;
 
+
+class Mall {
+	string denumireMall;
+	int nrMagazine;
+	Magazin* vectorMagazine;
+
+public:
+	Mall() {
+		this->denumireMall = "Necunoscut";
+		this->nrMagazine = 0;
+		this->vectorMagazine = NULL;
+	}
+	Mall(string denumireMall, int nrMagazine, Magazin* vectorMagazine) {
+		this->denumireMall = denumireMall;
+		this->nrMagazine = nrMagazine;
+		this->vectorMagazine = new Magazin[this->nrMagazine];
+		for (int i = 0; i < this->nrMagazine; i++) {
+			this->vectorMagazine[i] = vectorMagazine[i];
+		}
+	}
+	string getDenumireMall() {
+		return this->denumireMall;
+	}
+	int getNrMagazine() {
+		return this->nrMagazine;
+	}
+	Magazin* getVectorMagazine() {
+		return this->vectorMagazine;
+	}
+	void setDenumireMall(string denumireMallNoua) {
+		this->denumireMall = denumireMallNoua;
+	}
+
+	void setMagazine(int nrMagazineNou,Magazin* vectorMagazineNou) {
+		if (vectorMagazine != NULL) {
+			delete[] this->vectorMagazine;
+		}
+		this->nrMagazine = nrMagazineNou;
+		this->vectorMagazine = new Magazin [this->nrMagazine];
+		for (int i = 0; i < this->nrMagazine; i++) {
+			this->vectorMagazine[i] = vectorMagazineNou[i];
+		}
+	}
+	~Mall() {
+		if (this->vectorMagazine != NULL)
+		{
+			delete[] this->vectorMagazine;
+		}
+	}
+};
+
 void main() {
 
 	float preturi[] = { 10.2,52.8,74.1,5.4 };
@@ -970,6 +1021,38 @@ void main() {
 		cout << endl << "OPERATORUL DE CAST LA STRING" << endl;
 		cout << "Produsul cel mai scump din magazinul 1 este:" << (string)m1 << endl;
 
+
+		Mall mall1;
+		cout << mall1.getDenumireMall() << endl;
+		cout << mall1.getNrMagazine() << endl;
+		cout << "Magazinele din Mall sunt:" << endl;
+		for (int i = 0; i < mall1.getNrMagazine(); i++)
+		{
+			cout << mall1.getVectorMagazine()[i] << endl << endl;
+		}
+
+		Magazin vectorMagazine1[] = { m1,m2,m3 };
+		Mall mall2("MegaMall", 3, vectorMagazine1);
+		cout << mall2.getDenumireMall() << endl;
+		cout << mall2.getNrMagazine() << endl;
+		cout << "Magazinele din Mall sunt:" << endl ;
+		for (int i = 0; i < mall2.getNrMagazine(); i++)
+		{
+			cout << mall2.getVectorMagazine()[i] << endl << endl;
+		}
+
+		cout << "-SETTERI-" << endl;
+		mall1.setDenumireMall("AFI");
+		Magazin vectorMagazine2[] = { m1,m4,m5};
+		mall1.setMagazine(3, vectorMagazine2);
+
+		cout << mall1.getDenumireMall() << endl;
+		cout << mall1.getNrMagazine() << endl;
+		cout << "Magazinele din Mall sunt:" << endl;
+		for (int i = 0; i < mall1.getNrMagazine(); i++)
+		{
+			cout << mall1.getVectorMagazine()[i] << endl << endl;
+		}
 
 }
 
