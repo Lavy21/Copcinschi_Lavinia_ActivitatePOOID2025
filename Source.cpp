@@ -646,6 +646,30 @@ public:
 			delete[] this->vectorMagazine;
 		}
 	}
+
+	Mall(const Mall& obj) {
+		this->denumireMall = obj.denumireMall;
+		this->nrMagazine = obj.nrMagazine;
+		this->vectorMagazine = new Magazin[this->nrMagazine];
+		for (int i = 0; i < this->nrMagazine; i++) {
+			this->vectorMagazine[i] = obj.vectorMagazine[i];
+		}
+	}
+
+	Mall& operator=(const Mall& obj) {
+		if (this != &obj) {
+			if (this->vectorMagazine != NULL) {
+				delete[] this->vectorMagazine;
+			}
+			this->denumireMall = obj.denumireMall;
+			this->nrMagazine = obj.nrMagazine;
+			this->vectorMagazine = new Magazin[this->nrMagazine];
+			for (int i = 0; i < this->nrMagazine; i++) {
+				this->vectorMagazine[i] = obj.vectorMagazine[i];
+			}
+		}
+		return *this;
+	}
 };
 
 void main() {
@@ -1050,6 +1074,43 @@ void main() {
 		for (int i = 0; i < mall1.getNrMagazine(); i++)
 		{
 			cout << mall1.getVectorMagazine()[i] << endl << endl;
+		}
+
+		Mall mall3 = mall2;
+		cout << mall3.getDenumireMall() << endl;
+		cout << mall3.getNrMagazine() << endl;
+		cout << "Magazinele din Mall 3 sunt:" << endl;
+		for (int i = 0; i < mall3.getNrMagazine();i++) {
+			cout << mall3.getVectorMagazine()[i] << endl;
+		}
+		Mall mall4;
+
+		cout << "Mall 1:" << endl;
+		cout << mall1.getDenumireMall() << endl;
+		cout << mall1.getNrMagazine() << endl;
+		cout << "Magazinele din Mall sunt:" << endl;
+		for (int i = 0; i < mall1.getNrMagazine(); i++)
+		{
+			cout << mall1.getVectorMagazine()[i] << endl << endl;
+		}
+		cout << "Mall4 inainte de modificare:" << endl;
+		cout << mall4.getDenumireMall() << endl;
+		cout << mall4.getNrMagazine() << endl;
+		cout << "Magazinele din Mall sunt:" << endl;
+		for (int i = 0; i < mall4.getNrMagazine(); i++)
+		{
+			cout << mall4.getVectorMagazine()[i] << endl << endl;
+		}
+
+		mall4 = mall1;
+
+		cout << "Mall4 dupa de modificare : " << endl;
+		cout << mall4.getDenumireMall() << endl;
+		cout << mall4.getNrMagazine() << endl;
+		cout << "Magazinele din Mall sunt:" << endl;
+		for (int i = 0; i < mall4.getNrMagazine(); i++)
+		{
+			cout << mall4.getVectorMagazine()[i] << endl << endl;
 		}
 }
 
