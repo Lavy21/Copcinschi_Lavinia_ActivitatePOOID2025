@@ -670,7 +670,62 @@ public:
 		}
 		return *this;
 	}
+	friend ostream& operator<<(ostream& out, const Mall& obj)
+	{
+		out << "Denumire Mall:" << obj.denumireMall << endl;
+		out << "Nr magazine:" << obj.nrMagazine << endl;
+		out << "Magazine:" << endl;
+		for (int i = 0; i < obj.nrMagazine; i++)
+		{
+			out << obj.vectorMagazine[i] << endl;
+		}
+		return out;
+	}
+
+	friend istream& operator>>(istream& in, Mall& obj)
+	{
+		cout << "Denumirea Mall-ului:";
+		in >> obj.denumireMall;
+		cout << "Numarul de magazine din Mall:";
+		in >> obj.nrMagazine;
+		if (obj.vectorMagazine != NULL)	{
+			delete[] obj.vectorMagazine;
+		}
+		obj.vectorMagazine = new Magazin[obj.nrMagazine];
+		cout << "Introduceti magazinele:" << endl;
+		for (int i = 0; i < obj.nrMagazine; i++)
+		{
+			in >> obj.vectorMagazine[i];
+		}
+		return in;
+	}
+
+	Magazin operator[](int pozitie)
+	{
+		if (pozitie >= 0 && pozitie < this->nrMagazine)	{
+			return this->vectorMagazine[pozitie];
+		}
+	}
+
+	Mall& operator-=(int pozitieDeSters)
+	{
+		Mall copie = *this;
+		if (this->vectorMagazine != NULL){
+			delete[] this->vectorMagazine;
+		}
+		this->nrMagazine--;
+		this->vectorMagazine = new Magazin[this->nrMagazine];
+		for (int i = 0; i < pozitieDeSters; i++){
+			this->vectorMagazine[i] = copie.vectorMagazine[i];
+		}
+		for (int i = pozitieDeSters + 1; i < copie.nrMagazine; i++)	{
+			this->vectorMagazine[i - 1] = copie.vectorMagazine[i];
+		}
+		return *this;
+	}
+
 };
+
 
 void main() {
 
@@ -1064,7 +1119,7 @@ void main() {
 		{
 			cout << mall2.getVectorMagazine()[i] << endl << endl;
 		}
-		cout << "-SETTERI-" << endl;
+		cout << "Setteri:" << endl;
 		mall1.setDenumireMall("AFI");
 		Magazin vectorMagazine2[] = { m1,m4,m5};
 		mall1.setMagazine(3, vectorMagazine2);
@@ -1112,5 +1167,18 @@ void main() {
 		{
 			cout << mall4.getVectorMagazine()[i] << endl << endl;
 		}
+
+
+		cout << mall1 << endl;
+		cin >> mall1;
+
+		cout << "Magazinul de pe pozitia 2 din Mall1 este:" << mall1[2];
+		cout << endl ;
+
+		cout << "Mall1 inainte de a sterge un magazin:" << mall1 << endl;
+
+		mall1 -= 1;
+
+		cout << "Mall1 dupa stergerea unui magazin:" << mall1 << endl << endl;
 }
 
