@@ -898,372 +898,372 @@ void main() {
 	}
 	cout << endl << endl;
 
-		//cout << "Setteri pentru Magazin3" << endl;
-		//cout << "Magazin 3 inainte de setteri" << endl;
-		//cout << m3.getDenumireMagazin() << endl;
-		//cout << m3.getNrAngajati() << endl;
-		//cout << m3.getSuprafataMagazinMP() << endl;
-		//cout << m3.getEsteNonStop() << endl;
-		//cout << m3.getCUI() << endl;
-		//cout << m3.getNumeProprietar() << endl;
-		//cout << m3.getNrProduse() << endl;
-		//for (int i = 0; i < m3.getNrProduse(); i++) {
-		//	cout << m3.getPreturiProduse()[i] << ";" << m3.getDenumiriProduse()[i] << endl;
-		//	cout << endl;
-		//}
+		cout << "Setteri pentru Magazin3" << endl;
+		cout << "Magazin 3 inainte de setteri" << endl;
+		cout << m3.getDenumireMagazin() << endl;
+		cout << m3.getNrAngajati() << endl;
+		cout << m3.getSuprafataMagazinMP() << endl;
+		cout << m3.getEsteNonStop() << endl;
+		cout << m3.getCUI() << endl;
+		cout << m3.getNumeProprietar() << endl;
+		cout << m3.getNrProduse() << endl;
+		for (int i = 0; i < m3.getNrProduse(); i++) {
+			cout << m3.getPreturiProduse()[i] << ";" << m3.getDenumiriProduse()[i] << endl;
+			cout << endl;
+		}
 
-		//m3.setDenumireMagazin("Alro");
-		//m3.setNrAngajati(20);
-		//m3.setSuprafataMagazinMP(147.95);
-		//m3.setEsteNonStop(1);
+		m3.setDenumireMagazin("Alro");
+		m3.setNrAngajati(20);
+		m3.setSuprafataMagazinMP(147.95);
+		m3.setEsteNonStop(1);
 
-		//cout << "Magazin 3 dupa setteri" << endl;
-		//cout << m3.getDenumireMagazin() << endl;
-		//cout << m3.getNrAngajati() << endl;
-		//cout << m3.getSuprafataMagazinMP() << endl;
-		//cout << m3.getEsteNonStop() << endl;
-		//cout << m3.getCUI() << endl;
-		//cout << m3.getNumeProprietar() << endl;
-		//cout << m3.getNrProduse() << endl;
-		//for (int i = 0; i < m3.getNrProduse(); i++) {
-		//	cout << m3.getPreturiProduse()[i] << ";" << m3.getDenumiriProduse()[i] << endl;
-		//	cout << endl;
-		//}
+		cout << "Magazin 3 dupa setteri" << endl;
+		cout << m3.getDenumireMagazin() << endl;
+		cout << m3.getNrAngajati() << endl;
+		cout << m3.getSuprafataMagazinMP() << endl;
+		cout << m3.getEsteNonStop() << endl;
+		cout << m3.getCUI() << endl;
+		cout << m3.getNumeProprietar() << endl;
+		cout << m3.getNrProduse() << endl;
+		for (int i = 0; i < m3.getNrProduse(); i++) {
+			cout << m3.getPreturiProduse()[i] << ";" << m3.getDenumiriProduse()[i] << endl;
+			cout << endl;
+		}
 
-		//cout << "Constructor copiere:" << endl;
-		//Magazin m8(m1);
-		//cout << "Magazin 1:" << endl;
-		//cout << m1.getDenumireMagazin() << endl;
-		//cout << m1.getNrAngajati() << endl;
-		//cout << m1.getSuprafataMagazinMP() << endl;
-		//cout << m1.getEsteNonStop() << endl;
-		//cout << m1.getCUI() << endl;
-		//cout << m1.getNumeProprietar() << endl;
-		//cout << m1.getNrProduse() << endl;
-		//for (int i = 0; i < m1.getNrProduse(); i++) {
-		//	cout << m1.getPreturiProduse()[i] << ";" << m1.getDenumiriProduse()[i] << endl;
-		//}
-		//cout << endl;
+		cout << "Constructor copiere:" << endl;
+		Magazin m8(m1);
+		cout << "Magazin 1:" << endl;
+		cout << m1.getDenumireMagazin() << endl;
+		cout << m1.getNrAngajati() << endl;
+		cout << m1.getSuprafataMagazinMP() << endl;
+		cout << m1.getEsteNonStop() << endl;
+		cout << m1.getCUI() << endl;
+		cout << m1.getNumeProprietar() << endl;
+		cout << m1.getNrProduse() << endl;
+		for (int i = 0; i < m1.getNrProduse(); i++) {
+			cout << m1.getPreturiProduse()[i] << ";" << m1.getDenumiriProduse()[i] << endl;
+		}
+		cout << endl;
 
-		//cout << "Magazin nou 8:" << endl;
-		//cout << m8.getDenumireMagazin() << endl;
-		//cout << m8.getNrAngajati() << endl;
-		//cout << m8.getSuprafataMagazinMP() << endl;
-		//cout << m8.getEsteNonStop() << endl;
-		//cout << m8.getCUI() << endl;
-		//cout << m8.getNumeProprietar() << endl;
-		//cout << m8.getNrProduse() << endl;
-		//for (int i = 0; i < m8.getNrProduse(); i++)
-		//{
-		//	cout << m8.getPreturiProduse()[i] << " ; " << m8.getDenumiriProduse()[i] << endl;
-		//}
-		//cout << endl;
+		cout << "Magazin nou 8:" << endl;
+		cout << m8.getDenumireMagazin() << endl;
+		cout << m8.getNrAngajati() << endl;
+		cout << m8.getSuprafataMagazinMP() << endl;
+		cout << m8.getEsteNonStop() << endl;
+		cout << m8.getCUI() << endl;
+		cout << m8.getNumeProprietar() << endl;
+		cout << m8.getNrProduse() << endl;
+		for (int i = 0; i < m8.getNrProduse(); i++)
+		{
+			cout << m8.getPreturiProduse()[i] << " ; " << m8.getDenumiriProduse()[i] << endl;
+		}
+		cout << endl;
 
-		//cout << "Operator =:" << endl;
-		//cout << "Magazin 4 inainte de a fi modificat:" << endl;
-		//cout << m4.getDenumireMagazin() << endl;
-		//cout << m4.getNrAngajati() << endl;
-		//cout << m4.getSuprafataMagazinMP() << endl;
-		//cout << m4.getEsteNonStop() << endl;
-		//cout << m4.getCUI() << endl;
-		//cout << m4.getNumeProprietar() << endl;
-		//cout << m4.getNrProduse() << endl;
-		//for (int i = 0; i < m4.getNrProduse(); i++)
-		//{
-		//	cout << m4.getPreturiProduse()[i] << " ; " << m4.getDenumiriProduse()[i] << endl;
-		//}
-		//cout << endl << endl;
+		cout << "Operator =:" << endl;
+		cout << "Magazin 4 inainte de a fi modificat:" << endl;
+		cout << m4.getDenumireMagazin() << endl;
+		cout << m4.getNrAngajati() << endl;
+		cout << m4.getSuprafataMagazinMP() << endl;
+		cout << m4.getEsteNonStop() << endl;
+		cout << m4.getCUI() << endl;
+		cout << m4.getNumeProprietar() << endl;
+		cout << m4.getNrProduse() << endl;
+		for (int i = 0; i < m4.getNrProduse(); i++)
+		{
+			cout << m4.getPreturiProduse()[i] << " ; " << m4.getDenumiriProduse()[i] << endl;
+		}
+		cout << endl << endl;
 
-		//m4 = m1;
+		m4 = m1;
 
-		//cout << "Magazin 4 dupa ce a fost modificat:" << endl;
-		//cout << m4.getDenumireMagazin() << endl;
-		//cout << m4.getNrAngajati() << endl;
-		//cout << m4.getSuprafataMagazinMP() << endl;
-		//cout << m4.getEsteNonStop() << endl;
-		//cout << m4.getCUI() << endl;
-		//cout << m4.getNumeProprietar() << endl;
-		//cout << m4.getNrProduse() << endl;
-		//for (int i = 0; i < m4.getNrProduse(); i++)
-		//{
-		//	cout << m4.getPreturiProduse()[i] << " ; " << m4.getDenumiriProduse()[i] << endl;
-		//}
-		//cout << endl << endl;
-
-
-		//cout << m1.getNrProduse() << endl;
-		//cout << "Produse:" << endl;
-		//for (int i = 0; i < m1.getNrProduse(); i++)
-		//{
-		//	cout << "Pret:" << m1.getPreturiProduse()[i] << " ; " << "Denumire:" << m1.getDenumiriProduse()[i] << endl;
-		//}
-		//cout << endl;
-
-		//cout << "Pretul minim din magazinul m1 este:" << m1.pretMinim() << endl;
-		//cout << "Pretul maxim din magazinul m1 este:" << m1.pretMaxim() << endl;
-		//cout << "Suma preturi din magazinul m1 sunt:" << m1.sumaPreturi() << endl;
-		//cout << "Pretul mediu din magazinul m1 este:" << m1.pretMediu() << endl;
-		//cout << endl << endl;
-
-		//cout << "Obiectul m1 inainte de apelarea metodei adauga:" << endl;
-		//cout << m1.getDenumireMagazin() << endl;
-		//cout << m1.getNrAngajati() << endl;
-		//cout << m1.getSuprafataMagazinMP() << endl;
-		//cout << m1.getEsteNonStop() << endl;
-		//cout << m1.getCUI() << endl;
-		//cout << m1.getNumeProprietar() << endl;
-		//cout << m1.getNrProduse() << endl;
-		//cout << "Produse:" << endl;
-		//for (int i = 0; i < m1.getNrProduse(); i++)
-		//{
-		//	cout << "Pret:" << m1.getPreturiProduse()[i] << " ; " << "Denumire:" << m1.getDenumiriProduse()[i] << endl;
-		//}
-		//cout << endl;
-
-		//m1.aplicareDiscount(0.2, 20);
-		//cout << m1.getNrProduse() << endl;
-		//cout << "Produse:" << endl;
-		//for (int i = 0; i < m1.getNrProduse(); i++)
-		//{
-		//	cout << "Pret:" << m1.getPreturiProduse()[i] << " ; " << "Denumire:" << m1.getDenumiriProduse()[i] << endl;
-		//}
-		//cout << endl << endl;
-
-		//m1.adaugaProdusNou(12.3, "Orez");
-
-		//cout << "Obiectul m1 dupa apelarea metodei adauga:" << endl;
-		//cout << m1.getDenumireMagazin() << endl;
-		//cout << m1.getNrAngajati() << endl;
-		//cout << m1.getSuprafataMagazinMP() << endl;
-		//cout << m1.getEsteNonStop() << endl;
-		//cout << m1.getCUI() << endl;
-		//cout << m1.getNumeProprietar() << endl;
-		//cout << m1.getNrProduse() << endl;
-		//cout << "Produse:" << endl;
-		//for (int i = 0; i < m1.getNrProduse(); i++)
-		//{
-		//	cout << "Pret:" << m1.getPreturiProduse()[i] << " ; " << "Denumire:" << m1.getDenumiriProduse()[i] << endl;
-		//}
-		//cout << endl << endl;
+		cout << "Magazin 4 dupa ce a fost modificat:" << endl;
+		cout << m4.getDenumireMagazin() << endl;
+		cout << m4.getNrAngajati() << endl;
+		cout << m4.getSuprafataMagazinMP() << endl;
+		cout << m4.getEsteNonStop() << endl;
+		cout << m4.getCUI() << endl;
+		cout << m4.getNumeProprietar() << endl;
+		cout << m4.getNrProduse() << endl;
+		for (int i = 0; i < m4.getNrProduse(); i++)
+		{
+			cout << m4.getPreturiProduse()[i] << " ; " << m4.getDenumiriProduse()[i] << endl;
+		}
+		cout << endl << endl;
 
 
-		//cout << "Obiectul m1 inainte de apelarea metodei elimina dupa pozitie:" << endl;
-		//cout << m1.getDenumireMagazin() << endl;
-		//cout << m1.getNrAngajati() << endl;
-		//cout << m1.getSuprafataMagazinMP() << endl;
-		//cout << m1.getEsteNonStop() << endl;
-		//cout << m1.getCUI() << endl;
-		//cout << m1.getNumeProprietar() << endl;
-		//cout << m1.getNrProduse() << endl;
-		//cout << "Produse:" << endl;
-		//for (int i = 0; i < m1.getNrProduse(); i++)
-		//{
-		//	cout << "Pret:" << m1.getPreturiProduse()[i] << " ; " << "Denumire:" << m1.getDenumiriProduse()[i] << endl;
-		//}
-		//cout << endl << endl;
+		cout << m1.getNrProduse() << endl;
+		cout << "Produse:" << endl;
+		for (int i = 0; i < m1.getNrProduse(); i++)
+		{
+			cout << "Pret:" << m1.getPreturiProduse()[i] << " ; " << "Denumire:" << m1.getDenumiriProduse()[i] << endl;
+		}
+		cout << endl;
 
-		//m1.eliminaProdusPozitie(2);
+		cout << "Pretul minim din magazinul m1 este:" << m1.pretMinim() << endl;
+		cout << "Pretul maxim din magazinul m1 este:" << m1.pretMaxim() << endl;
+		cout << "Suma preturi din magazinul m1 sunt:" << m1.sumaPreturi() << endl;
+		cout << "Pretul mediu din magazinul m1 este:" << m1.pretMediu() << endl;
+		cout << endl << endl;
 
-		//cout << "Obiectul m1 dupa apelarea metodei elimina dupa pozitie:" << endl;
-		//cout << m1.getDenumireMagazin() << endl;
-		//cout << m1.getNrAngajati() << endl;
-		//cout << m1.getSuprafataMagazinMP() << endl;
-		//cout << m1.getEsteNonStop() << endl;
-		//cout << m1.getCUI() << endl;
-		//cout << m1.getNumeProprietar() << endl;
-		//cout << m1.getNrProduse() << endl;
-		//cout << "Produse:" << endl;
-		//for (int i = 0; i < m1.getNrProduse(); i++)
-		//{
-		//	cout << "Pret:" << m1.getPreturiProduse()[i] << " ; " << "Denumire:" << m1.getDenumiriProduse()[i] << endl;
-		//}
-		//cout << endl << endl;
+		cout << "Obiectul m1 inainte de apelarea metodei adauga:" << endl;
+		cout << m1.getDenumireMagazin() << endl;
+		cout << m1.getNrAngajati() << endl;
+		cout << m1.getSuprafataMagazinMP() << endl;
+		cout << m1.getEsteNonStop() << endl;
+		cout << m1.getCUI() << endl;
+		cout << m1.getNumeProprietar() << endl;
+		cout << m1.getNrProduse() << endl;
+		cout << "Produse:" << endl;
+		for (int i = 0; i < m1.getNrProduse(); i++)
+		{
+			cout << "Pret:" << m1.getPreturiProduse()[i] << " ; " << "Denumire:" << m1.getDenumiriProduse()[i] << endl;
+		}
+		cout << endl;
 
-		//cout << "Obiectul m1 inainte de apelarea metodei elimina dupa valoare:" << endl;
-		//cout << m1.getDenumireMagazin() << endl;
-		//cout << m1.getNrAngajati() << endl;
-		//cout << m1.getSuprafataMagazinMP() << endl;
-		//cout << m1.getEsteNonStop() << endl;
-		//cout << m1.getCUI() << endl;
-		//cout << m1.getNumeProprietar() << endl;
-		//cout << m1.getNrProduse() << endl;
-		//cout << "Produse:" << endl;
-		//for (int i = 0; i < m1.getNrProduse(); i++)
-		//{
-		//	cout << "Pret:" << m1.getPreturiProduse()[i] << " ; " << "Denumire:" << m1.getDenumiriProduse()[i] << endl;
-		//}
-		//cout << endl << endl;
+		m1.aplicareDiscount(0.2, 20);
+		cout << m1.getNrProduse() << endl;
+		cout << "Produse:" << endl;
+		for (int i = 0; i < m1.getNrProduse(); i++)
+		{
+			cout << "Pret:" << m1.getPreturiProduse()[i] << " ; " << "Denumire:" << m1.getDenumiriProduse()[i] << endl;
+		}
+		cout << endl << endl;
 
-		//m1.eliminaProdusValore(10.2);
+		m1.adaugaProdusNou(12.3, "Orez");
 
-		//cout << "Obiectul m1 dupa apelarea metodei elimina dupa valoare:" << endl;
-		//cout << m1.getDenumireMagazin() << endl;
-		//cout << m1.getNrAngajati() << endl;
-		//cout << m1.getSuprafataMagazinMP() << endl;
-		//cout << m1.getEsteNonStop() << endl;
-		//cout << m1.getCUI() << endl;
-		//cout << m1.getNumeProprietar() << endl;
-		//cout << m1.getNrProduse() << endl;
-		//cout << "Produse:" << endl;
-		//for (int i = 0; i < m1.getNrProduse(); i++)
-		//{
-		//	cout << "Pret:" << m1.getPreturiProduse()[i] << " ; " << "Denumire:" << m1.getDenumiriProduse()[i] << endl;
-		//}
-		//cout << endl << endl;
-
-		//cout << "Suprafata m1:" << m1.getSuprafataMagazinMP() << endl;
-		//cout << "Suprafata m2:" << m2.getSuprafataMagazinMP() << endl;
-		//cout << "Suprafata magazinului 1 este <= suprafata magazinului 2? (1 - DA ; 0 - NU):" << (m1 <= m2) << endl;
-
-		//if (m1 <= m2)
-		//{
-		//	cout << "Suprafata magazinului 1 este <= suprafata magazinului 2";
-		//}
-		//else
-		//{
-		//	cout << "Suprafata magazinului 1 este >= suprafata magazinului 2";
-		//}
-
-		//cout << endl << endl << "OPERATORUL<<" << endl << endl;
-		//cout << m1 << endl;
-		//cout << m2 << endl;
-		//cout << m3 << endl;
+		cout << "Obiectul m1 dupa apelarea metodei adauga:" << endl;
+		cout << m1.getDenumireMagazin() << endl;
+		cout << m1.getNrAngajati() << endl;
+		cout << m1.getSuprafataMagazinMP() << endl;
+		cout << m1.getEsteNonStop() << endl;
+		cout << m1.getCUI() << endl;
+		cout << m1.getNumeProprietar() << endl;
+		cout << m1.getNrProduse() << endl;
+		cout << "Produse:" << endl;
+		for (int i = 0; i < m1.getNrProduse(); i++)
+		{
+			cout << "Pret:" << m1.getPreturiProduse()[i] << " ; " << "Denumire:" << m1.getDenumiriProduse()[i] << endl;
+		}
+		cout << endl << endl;
 
 
-		//cout << endl << "OPERATORUL>>" << endl;
-		//cin >> m1;
-		//cout << endl << m1 << endl;
+		cout << "Obiectul m1 inainte de apelarea metodei elimina dupa pozitie:" << endl;
+		cout << m1.getDenumireMagazin() << endl;
+		cout << m1.getNrAngajati() << endl;
+		cout << m1.getSuprafataMagazinMP() << endl;
+		cout << m1.getEsteNonStop() << endl;
+		cout << m1.getCUI() << endl;
+		cout << m1.getNumeProprietar() << endl;
+		cout << m1.getNrProduse() << endl;
+		cout << "Produse:" << endl;
+		for (int i = 0; i < m1.getNrProduse(); i++)
+		{
+			cout << "Pret:" << m1.getPreturiProduse()[i] << " ; " << "Denumire:" << m1.getDenumiriProduse()[i] << endl;
+		}
+		cout << endl << endl;
+
+		m1.eliminaProdusPozitie(2);
+
+		cout << "Obiectul m1 dupa apelarea metodei elimina dupa pozitie:" << endl;
+		cout << m1.getDenumireMagazin() << endl;
+		cout << m1.getNrAngajati() << endl;
+		cout << m1.getSuprafataMagazinMP() << endl;
+		cout << m1.getEsteNonStop() << endl;
+		cout << m1.getCUI() << endl;
+		cout << m1.getNumeProprietar() << endl;
+		cout << m1.getNrProduse() << endl;
+		cout << "Produse:" << endl;
+		for (int i = 0; i < m1.getNrProduse(); i++)
+		{
+			cout << "Pret:" << m1.getPreturiProduse()[i] << " ; " << "Denumire:" << m1.getDenumiriProduse()[i] << endl;
+		}
+		cout << endl << endl;
+
+		cout << "Obiectul m1 inainte de apelarea metodei elimina dupa valoare:" << endl;
+		cout << m1.getDenumireMagazin() << endl;
+		cout << m1.getNrAngajati() << endl;
+		cout << m1.getSuprafataMagazinMP() << endl;
+		cout << m1.getEsteNonStop() << endl;
+		cout << m1.getCUI() << endl;
+		cout << m1.getNumeProprietar() << endl;
+		cout << m1.getNrProduse() << endl;
+		cout << "Produse:" << endl;
+		for (int i = 0; i < m1.getNrProduse(); i++)
+		{
+			cout << "Pret:" << m1.getPreturiProduse()[i] << " ; " << "Denumire:" << m1.getDenumiriProduse()[i] << endl;
+		}
+		cout << endl << endl;
+
+		m1.eliminaProdusValore(10.2);
+
+		cout << "Obiectul m1 dupa apelarea metodei elimina dupa valoare:" << endl;
+		cout << m1.getDenumireMagazin() << endl;
+		cout << m1.getNrAngajati() << endl;
+		cout << m1.getSuprafataMagazinMP() << endl;
+		cout << m1.getEsteNonStop() << endl;
+		cout << m1.getCUI() << endl;
+		cout << m1.getNumeProprietar() << endl;
+		cout << m1.getNrProduse() << endl;
+		cout << "Produse:" << endl;
+		for (int i = 0; i < m1.getNrProduse(); i++)
+		{
+			cout << "Pret:" << m1.getPreturiProduse()[i] << " ; " << "Denumire:" << m1.getDenumiriProduse()[i] << endl;
+		}
+		cout << endl << endl;
+
+		cout << "Suprafata m1:" << m1.getSuprafataMagazinMP() << endl;
+		cout << "Suprafata m2:" << m2.getSuprafataMagazinMP() << endl;
+		cout << "Suprafata magazinului 1 este <= suprafata magazinului 2? (1 - DA ; 0 - NU):" << (m1 <= m2) << endl;
+
+		if (m1 <= m2)
+		{
+			cout << "Suprafata magazinului 1 este <= suprafata magazinului 2";
+		}
+		else
+		{
+			cout << "Suprafata magazinului 1 este >= suprafata magazinului 2";
+		}
+
+		cout << endl << endl << "OPERATORUL<<" << endl << endl;
+		cout << m1 << endl;
+		cout << m2 << endl;
+		cout << m3 << endl;
 
 
-		//cout << endl << "OPERATORUL []" << endl;
-		//cout << "Denumirea produsului cu indexul 2 din magazinul 2 este:" << m2[2] << endl;
-		//cout << "Denumirea produsului cu indexul 2 din magazinul 2 este:" << m2[20] << endl;
-
-		//cout << endl << "OPERATORUL ()" << endl;
-		//cout << m3 << endl;
-		//cout << "In magazinul 3 avem: " << m3(15) << "Produse cu pretul mai mare de 15 de lei" << endl;
-
-		//cout << endl << endl << "OPERATORUL !" << endl << endl;
-		//cout << "Obiectul m1 este non-stop? (1-DA/ 0-NU)" << m1.getEsteNonStop() << endl;
-		//!m1;
-		//cout << "Obiectul m1 este non-stop? (1-DA/ 0-NU)" << m1.getEsteNonStop() << endl;
-
-		//cout << endl << endl << "OPERATORUL +=" << endl << endl;
-		//cout << "M3 inainte de apelul operatorului +=:" << endl;
-		//cout << m3 << endl << endl;
-		//m3 += 23.7;
-		//cout << "M3 dupa apelul operatorului +=:" << endl;
-		//cout << m3 << endl << endl;
-
-		//cout << endl << endl << "OPERATORUL -=" << endl << endl;
-		//cout << "M3 inainte de apelul operatorului -=:" << endl;
-		//cout << m3 << endl << endl;
-		//m3 -= 123.5;
-		//cout << "M3 dupa apelul operatorului -=:" << endl;
-		//cout << m3 << endl << endl;
-
-		//cout << endl << endl << "OPERATORUL ++ preincrementare" << endl << endl;
-		//cout << "Nr anagjati m1:" << m1.getNrAngajati() << endl;
-		//cout << "Nr anagjati m3:" << m3.getNrAngajati() << endl;
-		//m1 = ++m3;
-		//cout << "Nr anagjati m1:" << m1.getNrAngajati() << endl;
-		//cout << "Nr anagjati m3:" << m3.getNrAngajati() << endl;
-
-		//cout << endl << "OPERATORUL ++ postincrementare" << endl;
-		//cout << "Nr anagjati m2:" << m2.getNrAngajati() << endl;
-		//cout << "Nr anagjati m4:" << m4.getNrAngajati() << endl;
-		//m2 = m4++;
-		//cout << "Nr anagjati m2:" << m2.getNrAngajati() << endl;
-		//cout << "Nr anagjati m4:" << m4.getNrAngajati() << endl;
-
-		//cout << endl << "OPERATORUL DE CAST LA FLOAT" << endl;
-		//cout << m1 << endl << endl;
-
-		//cout << "Suma valorii TVA pentru produsele din magazinul 1 este:" << (float)m1 << endl;
-
-		//cout << endl << "OPERATORUL DE CAST LA STRING" << endl;
-		//cout << "Produsul cel mai scump din magazinul 1 este:" << (string)m1 << endl;
+		cout << endl << "OPERATORUL>>" << endl;
+		cin >> m1;
+		cout << endl << m1 << endl;
 
 
-		//Mall mall1;
-		//cout << mall1.getDenumireMall() << endl;
-		//cout << mall1.getNrMagazine() << endl;
-		//cout << "Magazinele din Mall sunt:" << endl;
-		//for (int i = 0; i < mall1.getNrMagazine(); i++)
-		//{
-		//	cout << mall1.getVectorMagazine()[i] << endl << endl;
-		//}
+		cout << endl << "OPERATORUL []" << endl;
+		cout << "Denumirea produsului cu indexul 2 din magazinul 2 este:" << m2[2] << endl;
+		cout << "Denumirea produsului cu indexul 2 din magazinul 2 este:" << m2[20] << endl;
 
-		//Magazin vectorMagazine1[] = { m1,m2,m3 };
-		//Mall mall2("MegaMall", 3, vectorMagazine1);
-		//cout << mall2.getDenumireMall() << endl;
-		//cout << mall2.getNrMagazine() << endl;
-		//cout << "Magazinele din Mall sunt:" << endl ;
-		//for (int i = 0; i < mall2.getNrMagazine(); i++)
-		//{
-		//	cout << mall2.getVectorMagazine()[i] << endl << endl;
-		//}
-		//cout << "Setteri:" << endl;
-		//mall1.setDenumireMall("AFI");
-		//Magazin vectorMagazine2[] = { m1,m4,m5};
-		//mall1.setMagazine(3, vectorMagazine2);
-		//cout << mall1.getDenumireMall() << endl;
-		//cout << mall1.getNrMagazine() << endl;
-		//cout << "Magazinele din Mall sunt:" << endl;
-		//for (int i = 0; i < mall1.getNrMagazine(); i++)
-		//{
-		//	cout << mall1.getVectorMagazine()[i] << endl << endl;
-		//}
+		cout << endl << "OPERATORUL ()" << endl;
+		cout << m3 << endl;
+		cout << "In magazinul 3 avem: " << m3(15) << "Produse cu pretul mai mare de 15 de lei" << endl;
 
-		//Mall mall3 = mall2;
-		//cout << mall3.getDenumireMall() << endl;
-		//cout << mall3.getNrMagazine() << endl;
-		//cout << "Magazinele din Mall 3 sunt:" << endl;
-		//for (int i = 0; i < mall3.getNrMagazine();i++) {
-		//	cout << mall3.getVectorMagazine()[i] << endl;
-		//}
-		//Mall mall4;
+		cout << endl << endl << "OPERATORUL !" << endl << endl;
+		cout << "Obiectul m1 este non-stop? (1-DA/ 0-NU)" << m1.getEsteNonStop() << endl;
+		!m1;
+		cout << "Obiectul m1 este non-stop? (1-DA/ 0-NU)" << m1.getEsteNonStop() << endl;
 
-		//cout << "Mall 1:" << endl;
-		//cout << mall1.getDenumireMall() << endl;
-		//cout << mall1.getNrMagazine() << endl;
-		//cout << "Magazinele din Mall sunt:" << endl;
-		//for (int i = 0; i < mall1.getNrMagazine(); i++)
-		//{
-		//	cout << mall1.getVectorMagazine()[i] << endl << endl;
-		//}
-		//cout << "Mall4 inainte de modificare:" << endl;
-		//cout << mall4.getDenumireMall() << endl;
-		//cout << mall4.getNrMagazine() << endl;
-		//cout << "Magazinele din Mall sunt:" << endl;
-		//for (int i = 0; i < mall4.getNrMagazine(); i++)
-		//{
-		//	cout << mall4.getVectorMagazine()[i] << endl << endl;
-		//}
+		cout << endl << endl << "OPERATORUL +=" << endl << endl;
+		cout << "M3 inainte de apelul operatorului +=:" << endl;
+		cout << m3 << endl << endl;
+		m3 += 23.7;
+		cout << "M3 dupa apelul operatorului +=:" << endl;
+		cout << m3 << endl << endl;
 
-		//mall4 = mall1;
+		cout << endl << endl << "OPERATORUL -=" << endl << endl;
+		cout << "M3 inainte de apelul operatorului -=:" << endl;
+		cout << m3 << endl << endl;
+		m3 -= 123.5;
+		cout << "M3 dupa apelul operatorului -=:" << endl;
+		cout << m3 << endl << endl;
 
-		//cout << "Mall4 dupa de modificare : " << endl;
-		//cout << mall4.getDenumireMall() << endl;
-		//cout << mall4.getNrMagazine() << endl;
-		//cout << "Magazinele din Mall sunt:" << endl;
-		//for (int i = 0; i < mall4.getNrMagazine(); i++)
-		//{
-		//	cout << mall4.getVectorMagazine()[i] << endl << endl;
-		//}
+		cout << endl << endl << "OPERATORUL ++ preincrementare" << endl << endl;
+		cout << "Nr anagjati m1:" << m1.getNrAngajati() << endl;
+		cout << "Nr anagjati m3:" << m3.getNrAngajati() << endl;
+		m1 = ++m3;
+		cout << "Nr anagjati m1:" << m1.getNrAngajati() << endl;
+		cout << "Nr anagjati m3:" << m3.getNrAngajati() << endl;
+
+		cout << endl << "OPERATORUL ++ postincrementare" << endl;
+		cout << "Nr anagjati m2:" << m2.getNrAngajati() << endl;
+		cout << "Nr anagjati m4:" << m4.getNrAngajati() << endl;
+		m2 = m4++;
+		cout << "Nr anagjati m2:" << m2.getNrAngajati() << endl;
+		cout << "Nr anagjati m4:" << m4.getNrAngajati() << endl;
+
+		cout << endl << "OPERATORUL DE CAST LA FLOAT" << endl;
+		cout << m1 << endl << endl;
+
+		cout << "Suma valorii TVA pentru produsele din magazinul 1 este:" << (float)m1 << endl;
+
+		cout << endl << "OPERATORUL DE CAST LA STRING" << endl;
+		cout << "Produsul cel mai scump din magazinul 1 este:" << (string)m1 << endl;
 
 
-		//cout << mall1 << endl;
-		//cin >> mall1;
+		Mall mall1;
+		cout << mall1.getDenumireMall() << endl;
+		cout << mall1.getNrMagazine() << endl;
+		cout << "Magazinele din Mall sunt:" << endl;
+		for (int i = 0; i < mall1.getNrMagazine(); i++)
+		{
+			cout << mall1.getVectorMagazine()[i] << endl << endl;
+		}
 
-		//cout << "Magazinul de pe pozitia 2 din Mall1 este:" << mall1[2];
-		//cout << endl ;
+		Magazin vectorMagazine1[] = { m1,m2,m3 };
+		Mall mall2("MegaMall", 3, vectorMagazine1);
+		cout << mall2.getDenumireMall() << endl;
+		cout << mall2.getNrMagazine() << endl;
+		cout << "Magazinele din Mall sunt:" << endl ;
+		for (int i = 0; i < mall2.getNrMagazine(); i++)
+		{
+			cout << mall2.getVectorMagazine()[i] << endl << endl;
+		}
+		cout << "Setteri:" << endl;
+		mall1.setDenumireMall("AFI");
+		Magazin vectorMagazine2[] = { m1,m4,m5};
+		mall1.setMagazine(3, vectorMagazine2);
+		cout << mall1.getDenumireMall() << endl;
+		cout << mall1.getNrMagazine() << endl;
+		cout << "Magazinele din Mall sunt:" << endl;
+		for (int i = 0; i < mall1.getNrMagazine(); i++)
+		{
+			cout << mall1.getVectorMagazine()[i] << endl << endl;
+		}
 
-		//cout << "Mall1 inainte de a sterge un magazin:" << mall1 << endl;
+		Mall mall3 = mall2;
+		cout << mall3.getDenumireMall() << endl;
+		cout << mall3.getNrMagazine() << endl;
+		cout << "Magazinele din Mall 3 sunt:" << endl;
+		for (int i = 0; i < mall3.getNrMagazine();i++) {
+			cout << mall3.getVectorMagazine()[i] << endl;
+		}
+		Mall mall4;
 
-		//mall1 -= 1;
+		cout << "Mall 1:" << endl;
+		cout << mall1.getDenumireMall() << endl;
+		cout << mall1.getNrMagazine() << endl;
+		cout << "Magazinele din Mall sunt:" << endl;
+		for (int i = 0; i < mall1.getNrMagazine(); i++)
+		{
+			cout << mall1.getVectorMagazine()[i] << endl << endl;
+		}
+		cout << "Mall4 inainte de modificare:" << endl;
+		cout << mall4.getDenumireMall() << endl;
+		cout << mall4.getNrMagazine() << endl;
+		cout << "Magazinele din Mall sunt:" << endl;
+		for (int i = 0; i < mall4.getNrMagazine(); i++)
+		{
+			cout << mall4.getVectorMagazine()[i] << endl << endl;
+		}
 
-		//cout << "Mall1 dupa stergerea unui magazin:" << mall1 << endl << endl;
+		mall4 = mall1;
+
+		cout << "Mall4 dupa de modificare : " << endl;
+		cout << mall4.getDenumireMall() << endl;
+		cout << mall4.getNrMagazine() << endl;
+		cout << "Magazinele din Mall sunt:" << endl;
+		for (int i = 0; i < mall4.getNrMagazine(); i++)
+		{
+			cout << mall4.getVectorMagazine()[i] << endl << endl;
+		}
+
+
+		cout << mall1 << endl;
+		cin >> mall1;
+
+		cout << "Magazinul de pe pozitia 2 din Mall1 este:" << mall1[2];
+		cout << endl ;
+
+		cout << "Mall1 inainte de a sterge un magazin:" << mall1 << endl;
+
+		mall1 -= 1;
+
+		cout << "Mall1 dupa stergerea unui magazin:" << mall1 << endl << endl;
 
 
 		Farmacie f1;
