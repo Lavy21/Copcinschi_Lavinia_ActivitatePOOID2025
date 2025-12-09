@@ -1312,7 +1312,6 @@ void main() {
 		}
 		cout << endl << endl;
 
-
 		cout << endl << endl << "Setteri" << endl << endl;
 		string denumireMedicament2[] = { "Vitamina", "Crema" };
 		f1.setMedicamente(2, denumireMedicament2);
