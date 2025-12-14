@@ -782,6 +782,18 @@ public:
 		}
 	}
 
+	string operator[](int pozitie)
+	{
+		if (pozitie >= 0 && pozitie < this->nrBunuri)
+		{
+			return this->denumireMedicament[pozitie];
+		}
+		else
+		{
+			return "Pozitia nu exista";
+		}
+	}
+
 	friend ostream& operator << (ostream& out, Farmacie& obj)	{
 		out << "Numar bunuri:" << obj.nrBunuri << endl;
 		out << "Denumire medicament: ";
@@ -1029,24 +1041,6 @@ void main() {
 		}
 		cout << endl << endl;
 
-		m1.adaugaProdusNou(12.3, "Orez");
-
-		cout << "Obiectul m1 dupa apelarea metodei adauga:" << endl;
-		cout << m1.getDenumireMagazin() << endl;
-		cout << m1.getNrAngajati() << endl;
-		cout << m1.getSuprafataMagazinMP() << endl;
-		cout << m1.getEsteNonStop() << endl;
-		cout << m1.getCUI() << endl;
-		cout << m1.getNumeProprietar() << endl;
-		cout << m1.getNrProduse() << endl;
-		cout << "Produse:" << endl;
-		for (int i = 0; i < m1.getNrProduse(); i++)
-		{
-			cout << "Pret:" << m1.getPreturiProduse()[i] << " ; " << "Denumire:" << m1.getDenumiriProduse()[i] << endl;
-		}
-		cout << endl << endl;
-
-
 		cout << "Obiectul m1 inainte de apelarea metodei elimina dupa pozitie:" << endl;
 		cout << m1.getDenumireMagazin() << endl;
 		cout << m1.getNrAngajati() << endl;
@@ -1256,7 +1250,7 @@ void main() {
 		cout << mall1 << endl;
 		cin >> mall1;
 
-		cout << "Magazinul de pe pozitia 2 din Mall1 este:" << mall1[2];
+		cout << "Magazinul de pe pozitia 1 din Mall1 este:" << mall1[1];
 		cout << endl ;
 
 		cout << "Mall1 inainte de a sterge un magazin:" << mall1 << endl;
@@ -1264,6 +1258,24 @@ void main() {
 		mall1 -= 1;
 
 		cout << "Mall1 dupa stergerea unui magazin:" << mall1 << endl << endl;
+
+		m1.adaugaProdusNou(12.3, "Orez");
+
+		cout << "Obiectul m1 dupa apelarea metodei adauga:" << endl;
+		cout << m1.getDenumireMagazin() << endl;
+		cout << m1.getNrAngajati() << endl;
+		cout << m1.getSuprafataMagazinMP() << endl;
+		cout << m1.getEsteNonStop() << endl;
+		cout << m1.getCUI() << endl;
+		cout << m1.getNumeProprietar() << endl;
+		cout << m1.getNrProduse() << endl;
+		cout << "Produse:" << endl;
+		for (int i = 0; i < m1.getNrProduse(); i++)
+		{
+			cout << "Pret:" << m1.getPreturiProduse()[i] << " ; " << "Denumire:" << m1.getDenumiriProduse()[i] << endl;
+		}
+		cout << endl << endl;
+
 
 
 		Farmacie f1;
@@ -1354,5 +1366,7 @@ void main() {
 		cin >> f1;
 
 		cout << endl << endl << f1 << endl << endl;
+
+		cout << "Categoria de medicamente de pe pozitia 1 din farmacia 1 este:" << f1[1] << endl;
 }
 
