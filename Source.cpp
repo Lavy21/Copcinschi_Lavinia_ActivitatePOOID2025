@@ -3,6 +3,20 @@
 #include<string>
 using namespace std;
 
+class Exceptie :exception
+{
+public:
+	string mesajEroare;
+	Exceptie(){
+		this->mesajEroare = "Eroarea este necunoscuta!";
+	}
+
+	Exceptie(string mesajEroare){
+		this->mesajEroare = mesajEroare;
+	}
+};
+
+
 class Magazin
 {
 	string denumireMagazin;
@@ -80,9 +94,26 @@ public:
 	}
 	Magazin(string denumireMagazin, int nrAngajati, float suprafataMagazinMP, bool esteNonStop, int CUI, const char* numeProprietar, int nrProduse, float*preturiProduse, string* denumiriProduse): CUI(CUI)
 	{
-		this->denumireMagazin = denumireMagazin;
-		this->nrAngajati = nrAngajati;
-		this->suprafataMagazinMP = suprafataMagazinMP;
+		if (denumireMagazin.length() >= 2)	{
+			this->denumireMagazin = denumireMagazin;
+		}
+		else	{
+			throw Exceptie("Eroare!");
+		}
+
+		if (nrAngajati >= 0)	{
+			this->nrAngajati = nrAngajati;
+		}
+		else{
+			this->nrAngajati = 0;
+		}
+
+		if (suprafataMagazinMP >= 5 && suprafataMagazinMP <= 500)	{
+			this->suprafataMagazinMP = suprafataMagazinMP;
+		}
+		else	{
+			this->suprafataMagazinMP = 10;
+		}
 		this->esteNonStop = esteNonStop;
 
 		this->numeProprietar = new char[strlen(numeProprietar) + 1];
@@ -145,14 +176,16 @@ public:
 		this->esteNonStop = esteNouNonStop;
 	}
 	void setNumeProprietar(const char* numeNouProprietar) {
-		if (this->numeProprietar != NULL) {
-			delete[] this->numeProprietar;
+		if (strlen(numeNouProprietar) >= 3)	{
+			if (this->numeProprietar != NULL)	{
+				delete[] this->numeProprietar;
+			}
+
 			this->numeProprietar = new char[strlen(numeNouProprietar) + 1];
 			strcpy(this->numeProprietar, numeNouProprietar);
 		}
-		else {
-			this->numeProprietar = new char[strlen(numeNouProprietar) + 1];
-			strcpy(this->numeProprietar, numeNouProprietar);
+		else	{
+			throw Exceptie("Eroare!");
 		}
 	}
 	void setProduse(int nrNouProduse, float* preturiNoiProsuse, string* denumiriNoiProduse) {
@@ -1368,5 +1401,13 @@ void main() {
 		cout << endl << endl << f1 << endl << endl;
 
 		cout << "Categoria de medicamente de pe pozitia 1 din farmacia 1 este:" << f1[1] << endl;
+
+
+		try	{
+			m4.setNumeProprietar("Ab");
+		}
+		catch (Exceptie obj) {
+			cout << obj.mesajEroare << endl;
+		}
 }
 
