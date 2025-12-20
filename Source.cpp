@@ -1,6 +1,10 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include<string>
+#include<vector>
+#include<list>
+#include<set>
+#include<map>
 using namespace std;
 
 class Exceptie :exception
@@ -24,14 +28,13 @@ class Magazin
 	float suprafataMagazinMP;
 	bool esteNonStop;
 	const int CUI;
-	static int clasaCaenPrincipala;
-
 	char* numeProprietar;
 	int nrProduse;
 	float* preturiProduse;
 	string* denumiriProduse;
 
 public:
+	static int clasaCaenPrincipala;
 
 	Magazin():CUI(0)
 	{
@@ -856,7 +859,7 @@ public:
 	}
 };
 
-void main() {
+int main() {
 
 	float preturi[] = { 10.2,52.8,74.1,5.4 };
 	string denumiri[] = { "peste","lamai","carne","chifle" };
@@ -1409,5 +1412,114 @@ void main() {
 		catch (Exceptie obj) {
 			cout << obj.mesajEroare << endl;
 		}
+
+		
+		
+		vector<float> vectorSTL1;
+
+		vectorSTL1.push_back(88.2);
+		vectorSTL1.push_back(15);
+		vectorSTL1.push_back(134.78);
+		vectorSTL1.push_back(10);
+
+		cout << "Numarul de elemente pentru vectorSTL1:" << vectorSTL1.size() << endl;
+		cout << "Elementele din vectorSTL1:" << endl;
+		for (int i = 0; i < vectorSTL1.size(); i++)	{
+			cout << vectorSTL1[i] << endl;
+		}
+
+		vectorSTL1.pop_back();
+
+		cout << "Numarul de elemente pentru vectorSTL1:" << vectorSTL1.size() << endl;
+		cout << "VectorSTL1:" << endl;
+		for (int i = 0; i < vectorSTL1.size(); i++)	{
+			cout << vectorSTL1[i] << endl;
+		}
+
+		cout << endl;
+
+		vector<Magazin> vectorSTL2;
+
+		vectorSTL2.push_back(m2);
+		vectorSTL2.push_back(m1);
+		vectorSTL2.push_back(m3);
+
+		cout << "Numarul de elemente pentru vectorSTL2:" << vectorSTL2.size() << endl;
+
+		cout << "Elementele din vectorSTL2:" << endl;
+		for (int i = 0; i < vectorSTL2.size(); i++)	{
+			cout << vectorSTL2[i] << endl;
+		}
+
+		vectorSTL2.pop_back();
+
+		cout << "Numarul de elemente pentru vectorSTL2:" << vectorSTL2.size() << endl;
+
+		cout << "VectorSTL2:" << endl;
+		for (int i = 0; i < vectorSTL2.size(); i++)	{
+			cout << vectorSTL2[i] << endl;
+		}
+
+
+		cout << endl;
+
+		list<Magazin> listaSTL1;
+
+		listaSTL1.push_back(m1);
+		listaSTL1.push_back(m2);
+		listaSTL1.push_back(m5);
+
+
+		cout << "Numarul de elemente pentru listaSTL1 este:" << listaSTL1.size() << endl;
+		listaSTL1.pop_back();
+		cout << endl;
+
+		list<Magazin>::iterator it1;
+
+		for (it1 = listaSTL1.begin(); it1 != listaSTL1.end(); it1++){
+			cout << *it1 << endl << endl;
+		}
+
+		cout << endl;
+		set<int> setSTL1; 
+		setSTL1.insert(15);
+		setSTL1.insert(350);
+		setSTL1.insert(5);
+		setSTL1.insert(15);
+		setSTL1.insert(2000);
+		setSTL1.insert(2);
+		setSTL1.insert(15);
+
+		cout << "Numarul de elemente pentru setSTL1:" << setSTL1.size() << endl;
+
+		set<int>::iterator it2;
+
+		for (it2 = setSTL1.begin(); it2 != setSTL1.end(); it2++)
+		{
+			cout << *it2 << endl << endl;
+		}
+
+		cout << endl;
+
+		map<int, Magazin> mapSTL1;
+
+		mapSTL1.insert(pair<int, Magazin>(150, m1));
+		mapSTL1.insert(pair<int, Magazin>(2, m5));
+		mapSTL1.insert(pair<int, Magazin>(30, m2));
+		mapSTL1.insert(pair<int, Magazin>(150, m3));
+		mapSTL1.insert(pair<int, Magazin>(75, m1));
+
+
+		cout << "Numarul de elemente pentru mapSTL1 :" << mapSTL1.size() << endl;
+
+		map<int, Magazin>::iterator it3;
+
+		for (it3 = mapSTL1.begin(); it3 != mapSTL1.end(); it3++)
+		{
+			cout << "Cheia de identificare este:" << it3->first << endl;
+			cout << "Valoarea :" << it3->second << endl;
+		}
+
+		return 0;
 }
 
